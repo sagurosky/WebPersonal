@@ -4,7 +4,7 @@ html{
 body{
     margin: 0;
     padding: 0;
-    background: linear-gradient(#7209b7,#3f37c0);
+    background: linear-gradient(#954ec5,#726bce);
 }
 .contenedor{
     margin: 50px auto;
@@ -65,4 +65,7 @@ margin-top:30px ;
 }
 .boton{
     text-align: center;
+    color:white;
+    padding:10px;
+    border-radius: 10px 0 10px 0 ;
 }
