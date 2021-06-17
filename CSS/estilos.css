@@ -1,0 +1,76 @@
+.titulo {
+font-size: 50px;
+margin-left: 30%;
+    
+background-color:cyan;
+padding:30px;
+border:10px solid darkblue;
+float:left;
+}
+.foto{
+    width:100px;
+    float: right;
+}
+
+h1{
+
+    font-size:40px;
+}
+p{
+    text-align: center;
+font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
+}
+/*a:link,a:visited{
+background-color:#7400b8;
+color:white;
+padding:20px;
+
+}
+a:hover,a:active{
+    background-color:#5390d9 ;
+    color:white;
+    padding:20px;
+}*/
+.botones:link, .botones:visited{
+    background-color:#7400b8;
+    color:white;
+    padding:20px;
+    
+}
+.botones:hover,.botones:active{
+    background-color:#5390d9 ;
+    color:white;
+    padding:20px;
+}
+table,th,td{
+    
+    border:1px solid black;
+    border-collapse: collapse;
+    padding:10px;
+    
+}
+caption{
+    color:#5e60ce;
+}
+
+th{
+    font-size:x-large;
+    background-color: #56cfe1;
+    color:white;
+}
+tr:nth-child(even){
+    background-color: #f1faee;
+
+}
+tr:nth-child(odd){
+    background-color: #dad8dc;
+}
+ol li::before{
+    
+    content:"curso:" 
+}
+#marco{
+    width:100%;
+height:500px;
+}
