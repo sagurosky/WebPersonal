@@ -5,7 +5,8 @@
 }
 
 body{
-    background: src="/imagenes/INVERTIR-EN-TECNOLOGIA.png" no-repeat;
+    background: no-repeat url("../imagenes/INVERTIR-EN-TECNOLOGIA.png");
+   /* background: src="/imagenes/INVERTIR-EN-TECNOLOGIA.png" no-repeat;*/
     background-size: cover;
     font-family:'Courier New', Courier, monospace ;
 }
