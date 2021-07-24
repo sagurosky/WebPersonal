@@ -11,7 +11,7 @@ body{
     font-family:'Courier New', Courier, monospace ;
 }
 
-.box{
+.box  {
     width: 500px;
     background: rgba(0, 0, 0, .6);
     margin: 0 auto;
@@ -21,8 +21,51 @@ body{
     border-radius: 15px;
     text-align: center;
 }
+.contacto {
+    width: 500px;
+    background: rgba(0, 0, 0, .6);
+    margin: 0 auto;
+    padding: 20px;
+    color: white;
+    border-radius: 15px;
+    text-align: left;
+}
+.contacto a{
+    color:aliceblue;
+    text-decoration: none;
+    
+}
+.box-form{
+    width: 800px;
+    background: rgba(0, 0, 0, .6);
+    margin: 0 auto;
+    margin-top: 4%;
+    padding: 20px;
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+.box-conozcame {
+    width: 1000px;
+    background: rgba(0, 0, 0, .6);
+    margin: 0 auto;
+    margin-top: 4%;
+    padding: 50px;
+    color: white;
+    border-radius: 15px;
+    text-align: left;
+}
+.seccion-form{
+    text-align: left;
+    margin:0 40%;
+}
+.boton{
+    width: 100px;
+    padding: 7px;
+    margin: 10px;
+}
 .box-img{
-    border-radius: 50%;
+    border-radius: 60%;
 }
 .box h1{
     font-size: 35px;
@@ -40,7 +83,7 @@ body{
 
 }
 
-.box p{
+.box p  {
     text-align: justify;
 }
 
@@ -52,15 +95,17 @@ body{
 .box ul li{
     display: inline-block;
 }
-.box ul li a{
-    color: rgb(142, 187, 201);
+.box a, .box-form a, .box-conozcame a{
+    text-decoration: none;
+    color: rgb(143, 207, 226);
     font-size: 25px;
-    padding: 10px 45px;
+    padding: 5px 45px;
     display: block;
     transition: all .5s ease-in-out;
 }
 
-.box ul li a:hover{
+ a:hover{
     color: rgb(39, 180, 223);
     transform: scale(1.1);
 }
+

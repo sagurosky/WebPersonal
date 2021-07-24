@@ -1,68 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contacto</title>
-    <link rel="stylesheet" href="CSS/estilos.css">
-</head>
-<body>
-    <h1>contacto</h1>
+    <link rel="stylesheet" href="CSS/estilos.css" />
+    <script src="js/funciones.js"></script>
+  </head>
+  <body>
+    <h1 style="text-align: center">contacto</h1></br>
 
-    <p style="text-align: left;">
-<ins>telefono:</ins> (011)1531868384 <br>
-<ins>Mail:</ins>DanielSagurosky@gmail.com<br/>
-<a href="mailto:danielsagurosky@gmail.com?subject=contacto desde pagina web&body=Hola, mi nombre es:">
-clic para enviarme un mail desde su aplicacion
-</a>
-<form>
-    <fieldset >
-        <legend>Permitame saber de usted</legend>
-    <br/><br/>
-    
-    <label for="nombre">nombre o razón social:*</label><br/>    
-    <input type="text" id="nombre" placeholder="escribe tu nombre"
-     name="nombre"required="true";/><br/>
-    
-    <label for="apellido">apellido: </label><br/>
-    <input type="text" id="apellido"placeholder="escribe tu apellido"
-    name="apellido"; ><br/>
+    <p class="contacto">
+      <ins>telefono:</ins> (011)1531868384 <br />
+      <ins>Mail:</ins>DanielSagurosky@gmail.com<br />
+      <a
+        href="mailto:danielsagurosky@gmail.com?subject=contacto desde pagina web&body=Hola, mi nombre es:"
+      >
+        clic para enviarme un mail desde su aplicacion
+      </a>
+    </p>
+    <section class="box-form">
+      <form>
+        <fieldset>
+          <legend>Permitame saber de usted</legend>
+          <br /><br />
 
-     <label for="email">email:   </label><br/>
-    <input type="email" id="email" placeholder="escribe tu mail"name="email";/><br/><br/>
+          <label for="nombre">nombre o razón social:*</label><br />
+          <input
+            type="text"
+            id="nombre"
+            placeholder="escribe tu nombre"
+            name="nombre"
+            required="true"
+            ;
+          /><br />
 
-    <label>contacto desde:</label><br/>
-    
-    <input type="radio" id="linkedin" name="acceso" value="linkedin">
-    <label>linkedin</label><br/>
-       
-    <input type="radio" id="computrabajo" name="acceso" value="computrabajo">
-    <label>computrabajo</label> <br/>
-      
-    <input type="radio" id="bumeran" name="acceso" value="bumeran">
-    <label>bumeran</label>  <br/>
-        
-    <input type="radio" id="recomendacion" name="acceso" value="recomendacion">
-    <label>recomendacion</label><br/><br/>
-    
-    <label for="comentario">comentario:</label><br/>
-    <textarea id="comentario" name="comentario" rows="10" cols="100" placeholder="escriba aquí lo que desea hacerme saber">
-</textarea><br/>
-    
+          <label for="apellido">apellido: </label><br />
+          <input
+            type="text"
+            id="apellido"
+            placeholder="escribe tu apellido"
+            name="apellido"
+            ;
+          /><br />
 
+          <label for="email">email: </label><br />
+          <input
+            type="email"
+            id="email"
+            placeholder="escribe tu mail"
+            name="email"
+            ;
+          /><br /><br />
 
-    <input type="submit"value="enviar"><input type="reset"value="restablecer">
+          <section class="seccion-form">
+            <label>contacto desde:</label><br />
 
-</fieldset>
-</form>
+            <input type="radio" id="linkedin" name="acceso" value="linkedin" />
+            <label>linkedin</label><br />
 
-<br/><br/>
-<a href="index.html" class="botones">inicio</a>
+            <input
+              type="radio"
+              id="computrabajo"
+              name="acceso"
+              value="computrabajo"
+            />
+            <label>computrabajo</label> <br />
 
-  
-</p>
-    
-</body>
-<br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <input type="radio" id="bumeran" name="acceso" value="bumeran" />
+            <label>bumeran</label> <br />
+
+            <input
+              type="radio"
+              id="recomendacion"
+              name="acceso"
+              value="recomendacion"
+            />
+            <label>recomendacion</label><br /><br />
+          </section>
+
+          <label for="comentario">comentario:</label><br />
+          <textarea
+            id="comentario"
+            name="comentario"
+            rows="10"
+            cols="100"
+            placeholder="escriba aquí lo que desea hacerme saber"
+          ></textarea
+          ><br />
+
+          <input
+            type="submit"
+            value="enviar"
+            class="boton"
+            onclick="formulario()"
+          />&nbsp;&nbsp;<input type="reset" value="restablecer" class="boton" />
+        </fieldset>
+      </form>
+      <br />
+      <a href="index.html">inicio</a>
+    </section>
+  </body>
 </html>
