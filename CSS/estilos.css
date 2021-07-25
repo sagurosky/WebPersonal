@@ -11,6 +11,10 @@ body{
     font-family:'Courier New', Courier, monospace ;
 }
 
+.limpiarEstilos{
+    background:none;
+}
+
 .box  {
     width: 500px;
     background: rgba(0, 0, 0, .6);
@@ -95,13 +99,14 @@ body{
 .box ul li{
     display: inline-block;
 }
-.box a, .box-form a, .box-conozcame a{
+.box a, .box-form a, .box-conozcame a, .boton a{
     text-decoration: none;
     color: rgb(143, 207, 226);
     font-size: 25px;
     padding: 5px 45px;
     display: block;
     transition: all .5s ease-in-out;
+    text-align: center;
 }
 
  a:hover{

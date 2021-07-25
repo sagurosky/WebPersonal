@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+      
+       integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" referrerpolicy="no-referrer"  />
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"
+  
+          integrity="sha512-m2PhLxj2N91eYrIGU2cmIu2d0SkaE4A14bCjVb9zykvp6WtsdriFCiXQ/8Hdj0kssUB/Nz0dMBcoLsJkSCto0Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    
+    <script src="/js/APIs.js"></script>
+
+    <title>Experimentos API</title>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var elementos = document.querySelectorAll("select");
+        M.FormSelect.init(elementos);
+      });
+    </script>
+  </head>
+  <!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
+  <body class="limpiarEstilos">
+    <nav>
+      <div class="nav-wrapper light-blue darken-2">
+        <a href="#!" class="brand-logo">API Clima</a>
+      </div>
+    </nav>
+    <div class="contenerod-form">
+      <div class="container">
+        <div class="row">
+          <div class="col m6 s12">
+            <form>
+              <div id="msj-error"></div>
+              <div class="input-field col s12">
+                <input type="text" name="ciudad" id="ciudad" />
+                <label htmlfor="ciudad">Ciudad</label>
+              </div>
+
+              <div class="input-field col s12">
+                <select name="pais" id="pais">
+                  <option value="">--seleccione un pais--</option>
+                  <option value="US">Estados Unidos</option>
+                  <option value="MX">México</option>
+                  <option value="AR">Argentina</option>
+                  <option value="CO">Colombia</option>
+                  <option value="CR">Costa Rica</option>
+                  <option value="ES">España</option>
+                  <option value="PE">Perú</option>
+                </select>
+                <label htmlfor="pais">País</label>
+              </div>
+              <div className="input-field col s12">
+                <button
+                  type="button"
+                  class="
+                    waves-efect waves-light
+                    btn-large
+                    bln-block
+                    yellow
+                    accent-4
+                    col
+                    s12
+                  "
+                  onclick="obtenerClima()"
+                >
+                  Buscar clima
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="col m6 s12" id="divResultado"></div>
+        </div>
+      </div>
+    </div>
+    </br>
+   
+    <a href="/index.html" class="col s12 btn-large accent-4" >inicio</a>
+
+  </body>
+</html>
