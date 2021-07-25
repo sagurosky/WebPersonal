@@ -35,6 +35,9 @@ divResultado.innerHTML=`
 <h3>El clima de ${name} es:
 ${parseFloat(main.temp-kelvin,10).toFixed(2)}<span> &#x2103;
 </h3>
+<p > Sensacion térmica
+${parseFloat(main.feels_like-kelvin,10).toFixed(2)}<span> &#x2103;</span>
+</p>
 <p > Temperatura máxima
 ${parseFloat(main.temp_max-kelvin,10).toFixed(2)}<span> &#x2103;</span>
 </p>
