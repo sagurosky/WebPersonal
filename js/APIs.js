@@ -16,7 +16,7 @@ const obtenerClima=()=>{
 const consultarApi= async(ciudad,pais)=>{
 
     const apiKey="aad08e9990426a0dc3cf32cd0a7939bd";
-    const url=`http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${apiKey}`;
+    const url=`https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${apiKey}`;
 const respuesta=await fetch(url);
 const resultado=await respuesta.json();
 console.log(resultado);
