@@ -4,89 +4,81 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-      
-       integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A==" crossorigin="anonymous" referrerpolicy="no-referrer"  />
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"
-  
-          integrity="sha512-m2PhLxj2N91eYrIGU2cmIu2d0SkaE4A14bCjVb9zykvp6WtsdriFCiXQ/8Hdj0kssUB/Nz0dMBcoLsJkSCto0Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    
     <script src="js/APIs.js"></script>
+    <link href="CSS/estilos.css" rel="stylesheet"/>
 
     <title>Experimentos API</title>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var elementos = document.querySelectorAll("select");
-        M.FormSelect.init(elementos);
-      });
-    </script>
+    
   </head>
   <!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
   <body class="limpiarEstilos">
     <nav>
-      <div class="nav-wrapper light-blue darken-2">
-        <a href="#!" class="brand-logo">API Clima</a>
+      <div >
+        <a href="#!" >API Clima</a>
       </div>
     </nav>
-    <div class="contenerod-form">
-      <div class="container">
-        <div class="row">
-          <div class="col m6 s12">
+    <div  >
+      
+        <div class="Contenedor">
+                                                                                                                                                                                                           
+          <div>
             <form>
+
               <div id="msj-error"></div>
-              <div class="input-field col s12">
+
+              <div >
                 <input type="text" name="ciudad" id="ciudad" />
-                <label htmlfor="ciudad">Ciudad</label>
+                <label for="ciudad" >Ciudad</label>
               </div>
 
-              <div class="input-field col s12">
-
-
-                <input type="text" name="pais" id="pais" />
-                <!-- <select name="pais" id="pais">
-                  <option value="">--seleccione un pais--</option>
-                  <option value="US">Estados Unidos</option>
-                  <option value="MX">México</option>
-                  <option value="AR">Argentina</option>
-                  <option value="CO">Colombia</option>
-                  <option value="CR">Costa Rica</option>
-                  <option value="ES">España</option>
-                  <option value="PE">Perú</option>
-                </select> -->
-                <label htmlfor="pais">País</label>
+              <div >
+                <input type="text" name="pais" id="pais" />                
+                <label for="pais">País</label>
               </div>
-              <div className="input-field col s12">
-                <button
-                  type="button"
-                  class="
-                    waves-efect waves-light
-                    btn-large
-                    bln-block
-                    yellow
-                    accent-4
-                    col
-                    s12
-                  "
-                  onclick="obtenerClima()"
-                >
-                  Buscar clima
-                </button>
+
+              <div  >
+                <button type="button" onclick="obtenerClima()">buscar clima</button>
               </div>
+
             </form>
-          </div>
-          <div class="col m6 s12" id="divResultado"></div>
+            </div>
+        
+          <div  id="divResultado"></div>
         </div>
-      </div>
+     
     </div>
-    </br>
-   
-    <a href="index.html" class="col s12 btn-large accent-4" >inicio</a>
+<!-- ---------------------------------------------------------------------------- -->
+    <nav>
+        <div >
+          <a href="#!" >API Noticias</a>
+        </div>
+      </nav>
 
+      <h2>Encuentra noticias por categoría</h2>
+      <select id="categoria">
+          <option value="">--selecciona</option>
+          <option value="general">General</option>
+          <option value="business">Negocios</option>
+          <option value="entertainment">Entretenimientos</option>
+          <option value="healt">Salud</option>
+          <option value="science">Ciencia</option>
+          <option value="sports">Deportes</option>
+          <option value="technology">Tecnología</option>
+      
+      </select>
+      <div>
+          <input type="button" value="buscar" onclick="obtenerNoticias()">
+      </div>
+<div id="divListadoNoticias"></div>
+    </br>
+
+
+
+
+
+
+<div class="boton" >
+    <a href="index.html"  >inicio</a>
+</div>
   </body>
 </html>
