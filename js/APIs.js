@@ -25,12 +25,13 @@ const consultarApi = async (ciudad, pais) => {
     return;
   }
   const { name, main } = resultado;
+
   if (!name) return null;
   let divResultado = document.querySelector("#divResultado");
 
   divResultado.innerHTML = `
-<div class="card-panel white col 12">
-<div class="black-text">
+<div >
+
 <h3>El clima de ${name} es:
 ${parseFloat(main.temp - kelvin, 10).toFixed(2)}<span> &#x2103;
 </h3>
@@ -50,7 +51,7 @@ ${parseFloat(main.humidity, 10).toFixed(2)}<span> %</span>
 ${parseFloat(main.pressure, 10).toFixed(2)}<span> Hp</span>
 </p>
 </div>
-</div>
+
 `;
 };
 
@@ -63,7 +64,8 @@ const mostrarError = (elemento, mensaje) => {
 };
 //----------------------------------------------------------------------------------
 
-const obtenerNoticias = async () => {
+// const obtenerNoticias = async () => {
+async function obtenerNoticias() {
   let categoria = document.querySelector("#categoria").value;
   const apikey = "4c2d5f6252f846af8ba95eac24b9a9d8";
   const url = `https://newsapi.org/v2/top-headlines?country=ar&category=${categoria}&apikey=${apikey}`;
@@ -73,21 +75,35 @@ const obtenerNoticias = async () => {
   console.log(resultado);
 
   let noticias = resultado.articles;
+  let estado = resultado.status;
+
   let listadoNoticiasHTML = "";
 
-  noticias.map((noticias) => {
-    const { urlToImage, url, title, description, source } = noticias;
-    let imagen=(urlToImage)?`<div> <img src="${urlToImage}"alt=${title}>
-                                <span>${source.name}</span></div>`:null;
+  if (estado == "ok") {
+    noticias.map((noticias) => {
+      const { urlToImage, url, title, description, source } = noticias;
 
-    listadoNoticiasHTML+=`<div>${imagen}<h3>${title}</h3><p>${description}</p>
-                            <div><a href="${url} target="_blank rel="nooper noreferrer">Ver noticia completa</a>
-                            </div></div>`
-  });
+      let imagen = urlToImage
+        ? `<div style="text-align: center"> <img src="${urlToImage}"alt=${title} style="width:430px; margin:30px"></br>
+                                <span>${source.name}</span></div>`
+        : "";
 
-  let divListadoNoticias=document.querySelector("#divListadoNoticias");
-  divListadoNoticias.innerHTML=`<div style="text-align: center">Cargando...</div>`
-  setTimeout(()=>{
-      divListadoNoticias.innerHTML=listadoNoticiasHTML;},3000);
-  
-};
+      listadoNoticiasHTML += `<div style="width:500px; border: solid">${imagen}<h3>${title}</h3><p>${description}</p>
+                            <div><a href="${url}">Ver noticia completa</a>
+                            </div></div>`;
+    });
+  }else if(estado =="error"){
+    listadoNoticiasHTML=`<h3>${estado}: ${resultado.message}</h3>`
+
+  }
+
+  let divListadoNoticias = document.querySelector("#divListadoNoticias");
+  divListadoNoticias.innerHTML = `<div style="text-align: center">Cargando...</div>`;
+  setTimeout(() => {
+    divListadoNoticias.innerHTML = listadoNoticiasHTML;
+  }, 3000);
+}
+
+async function api() {
+  await fetch(url);
+}
