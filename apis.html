@@ -10,15 +10,16 @@
     
   </head>
   <!-- ---------------------------------------------------------------------------------------------------------------------------------------- -->
-  <body class="limpiarEstilos">
+  <body class="limpiarEstilos" onload="apiCovid(); apiFrases()">
     <nav>
       <div >
         <a href="#!" >API Clima</a>
       </div>
     </nav>
+    <h2>obtener el clima actual de cada ciudad</h2>
     <div  >
       
-        <div class="Contenedor">
+        <div class="Contenedor" >
                                                                                                                                                                                                            
           <div>
             <form>
@@ -36,13 +37,16 @@
               </div>
 
               <div  >
+                </br>
                 <button type="button" onclick="obtenerClima()">buscar clima</button>
               </div>
 
             </form>
-            </div>
+           </div>
         
-          <div  id="divResultado" ></div>
+           <div  id="divResultado" >
+
+          </div>
         </div>
      
     </div>
@@ -52,8 +56,9 @@
           <a href="#!" >API Noticias</a>
         </div>
       </nav>
-
       <h2>Encuentra noticias por categoría</h2>
+<div class="Contenedor">
+      
       <select id="categoria">
           <option value="">--selecciona</option>
           <option value="general">General</option>
@@ -63,19 +68,46 @@
           <option value="science">Ciencia</option>
           <option value="sports">Deportes</option>
           <option value="technology">Tecnología</option>
-      
+       
       </select>
+    
       <div>
           <input type="button" value="buscar" onclick="obtenerNoticias()">
+          <input type="button" value="limpiar" onclick="limpiarNoticias()">
       </div>
+    </div>
 <div id="divListadoNoticias" style="display:flex; flex-wrap: wrap;"></div>
     </br>
 
+<!-- -------------------------------------------------------------------------------------------------------------- -->
+<nav>
+  <div >
+    <a href="#!" >API Covid19</a></br>
+    
+
+  </div>
+</nav>
+<div class="Contenedor" >
+  <h3>Datos Covid 19 en argentina</h3></br>
 
 
+<div class="Contenedor">
+  <div id="divCovid" ></div>
+</div>
 
+</div>
+<!-- ------------------------------------------------------------------------------------------------------------- -->
+<nav>
+  <div >
+    <a href="#!" >API Frase del día</a></br>   
 
+  </div>
+</nav>
 
+<div class="Contenedor" >
+  <h3 id="divFrase"></h3></br>
+</div>
+</br>
 <div class="boton" >
     <a href="index.html"  >inicio</a>
 </div>

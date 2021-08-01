@@ -84,17 +84,16 @@ async function obtenerNoticias() {
       const { urlToImage, url, title, description, source } = noticias;
 
       let imagen = urlToImage
-        ? `<div style="text-align: center"> <img src="${urlToImage}"alt=${title} style="width:430px; margin:30px"></br>
+        ? `<div > <img src="${urlToImage}"alt=${title} style="width:430px; margin:30px"></br>
                                 <span>${source.name}</span></div>`
         : "";
 
-      listadoNoticiasHTML += `<div style="width:500px; border: solid">${imagen}<h3>${title}</h3><p>${description}</p>
+      listadoNoticiasHTML += `<div style="width:500px; border: solid; padding:20px">${imagen}<h3>${title}</h3><p>${description}</p>
                             <div><a href="${url}">Ver noticia completa</a>
                             </div></div>`;
     });
-  }else if(estado =="error"){
-    listadoNoticiasHTML=`<h3>${estado}: ${resultado.message}</h3>`
-
+  } else if (estado == "error") {
+    listadoNoticiasHTML = `<h3>${estado}: ${resultado.message}</h3>`;
   }
 
   let divListadoNoticias = document.querySelector("#divListadoNoticias");
@@ -103,7 +102,49 @@ async function obtenerNoticias() {
     divListadoNoticias.innerHTML = listadoNoticiasHTML;
   }, 3000);
 }
+function limpiarNoticias() {
+  let divListadoNoticias = document.querySelector("#divListadoNoticias");
+  divListadoNoticias.innerHTML = "";
+}
 
-async function api() {
-  await fetch(url);
+//-----------------------------------------------------------------------------------------------------------------------
+ async function apiCovid() {
+  
+  let url = `https://api.covid19api.com/live/country/argentina`;
+  let respuesta = await fetch(url);
+  let resultado = await respuesta.json();
+
+
+  let activos=resultado[resultado.length-1].Active;
+  let confirmados=resultado[resultado.length-1].Confirmed;
+  let muertos=resultado[resultado.length-1].Deaths;
+  let recuperados=resultado[resultado.length-1].Recovered;
+
+  // console.log(resultado[resultado.length-1]);
+
+  let divCovid=document.querySelector("#divCovid");
+  divCovid.innerHTML=`
+  <p>Casos activos: ${activos}</p></br>
+  <p>Total confirmados: ${confirmados}</p></br>
+  <p>Cantidad de muertos: ${muertos}</p></br>
+  <p>Cantidad de recuperados: ${recuperados}</p></br> 
+  
+  `
+
+}
+//-------------------------------------------------------------------------------------------------
+async function apiFrases(){
+let url="https://quotes.rest/qod?language=en"
+let respuesta=await fetch(url);
+let resultado=await respuesta.json();
+console.log(resultado);
+
+let divFrases=document.querySelector("#divFrase");
+divFrases.innerHTML=`
+<p>Frase del día:</p></br>
+ <p >${resultado.contents.quotes[resultado.contents.quotes.length-1].quote}</p></br>
+<p>Autor: ${resultado.contents.quotes[resultado.contents.quotes.length-1].author}</p>
+
+`
+
 }
