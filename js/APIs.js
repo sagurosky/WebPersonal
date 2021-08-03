@@ -115,19 +115,20 @@ function limpiarNoticias() {
   let resultado = await respuesta.json();
 
 
-  let activos=resultado[resultado.length-1].Active;
-  let confirmados=resultado[resultado.length-1].Confirmed;
-  let muertos=resultado[resultado.length-1].Deaths;
-  let recuperados=resultado[resultado.length-1].Recovered;
+  let {Active,Confirmed,Deaths,Recovered}=resultado[resultado.length-1];
+  // let activos=resultado[resultado.length-1].Active;
+  // let confirmados=resultado[resultado.length-1].Confirmed;
+  // let muertos=resultado[resultado.length-1].Deaths;
+  // let recuperados=resultado[resultado.length-1].Recovered;
 
   // console.log(resultado[resultado.length-1]);
 
   let divCovid=document.querySelector("#divCovid");
   divCovid.innerHTML=`
-  <p>Casos activos: ${activos}</p></br>
-  <p>Total confirmados: ${confirmados}</p></br>
-  <p>Cantidad de muertos: ${muertos}</p></br>
-  <p>Cantidad de recuperados: ${recuperados}</p></br> 
+  <p>Casos activos: ${Active}</p></br>
+  <p>Total confirmados: ${Confirmed}</p></br>
+  <p>Cantidad de muertos: ${Deaths}</p></br>
+  <p>Cantidad de recuperados: ${Recovered}</p></br> 
   
   `
 
